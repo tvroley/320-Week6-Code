@@ -8,8 +8,6 @@ function AddJournal() {
     const handleSubmit = async event => {
         event.preventDefault();
         console.log(entry);
-        //const textAreaEl = event.target.firstElementChild.nextElementSibling;
-        //setEntry(textAreaEl.value);
 
         // Add a new document with a generated id.
         const docRef = await addDoc(collection(db, "journal-entries"), {
@@ -25,7 +23,7 @@ function AddJournal() {
             <h2>Add Journal Entry</h2>
             <form action="" onSubmit={(event) => handleSubmit(event)}>
                 <label htmlFor="entry-input"></label>
-                <textarea id='entry-input'></textarea>
+                <textarea id='entry-input' onChange={e => setEntry(e.target.value)} value={entry} />
                 <button type="submit">Submit</button>
             </form>
         </>
