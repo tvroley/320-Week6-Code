@@ -5,7 +5,7 @@ import db from '../db';
 
 export default function JournalEntry() {
     const { id } = useParams();
-    const [entry, setEntry] = useState('');
+    const [entry, setEntry] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
