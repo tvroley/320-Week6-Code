@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { collection, getDocs, doc, onSnapshot, query, orderBy, deleteDoc, setDoc } from "firebase/firestore";
+import { collection, doc, onSnapshot, query, orderBy, deleteDoc, setDoc } from "firebase/firestore";
 import db from '../db';
 import { Link } from 'react-router-dom';
 import AddJournal from './AddJournal';
@@ -23,11 +23,6 @@ export default function Journal() {
                 setHasError(true);
                 setIsLoading(false);
             }
-            /*const querySnapshot = await getDocs(collection(db, 'journal-entries'));
-            console.log(querySnapshot.docs);
-            querySnapshot.forEach((doc) => {
-                console.log(doc.id, " => ", doc.data);
-            });*/
         }
 
         getData();
